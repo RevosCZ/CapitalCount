@@ -1,0 +1,7 @@
+{
+  "name": "CapitalCountry",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
