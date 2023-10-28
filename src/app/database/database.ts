@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
 
-const STORAGE_KEY = 'my_list';
-
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class StorageService {
+  private _storage: Storage | null = null;
 
   constructor(private storage: Storage) {
     this.init();
@@ -15,22 +14,32 @@ export class DataService {
 
   async init() {
     // If using, define drivers here: await this.storage.defineDriver(/*...*/);
-    await this.storage.create();
+    const storage = await this.storage.create();
+    this._storage = storage;
   }
 
-  getData() {
-    return this.storage.get(STORAGE_KEY)
+  // Create and expose methods that users of this service can
+  // call, for example:
+  public async set(key: string, value: any) {
+    this._storage?.set(key, value);
   }
 
-  async setData(item: string) {
-    const StoredData = await this.storage.get(STORAGE_KEY) || [];
-    StoredData.push(item);
-    return this.storage.set(STORAGE_KEY,StoredData);
+  public async get(key: string) {
+    let value = await this._storage?.get(key);
+    console.log(value)
+    return value
   }
 
-  async removeItem(index: any) {
-    const StoredData = await this.storage.get(STORAGE_KEY) || [];
-    StoredData.splice(index, 1);
-    return this.storage.set(STORAGE_KEY,StoredData);
+  public async remove(key: string) {
+    let value = await this._storage?.remove(key);
+  }
+
+  public async clear() {
+    let value = await this._storage?.clear();
+  }
+
+  public async keys() {
+    let value = await this._storage?.keys();
+    return value;
   }
 }
