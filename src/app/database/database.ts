@@ -42,4 +42,13 @@ export class StorageService {
     let value = await this._storage?.keys();
     return value;
   }
+
+  public async compare(key: string, value: any) {
+    if (value == this._storage?.get(key)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

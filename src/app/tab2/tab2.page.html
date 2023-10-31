@@ -3,6 +3,10 @@
     <ion-title>
       Capital Country
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-toggle slot="end" [checked]="darkMode" (ionChange)="toggleDarkMode()">Dark Mode
+      </ion-toggle>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -36,7 +40,7 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Welcome to Capital Country!</ion-card-title>
+      <ion-card-title>Locate</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>

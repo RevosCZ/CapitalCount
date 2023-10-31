@@ -7,10 +7,12 @@
 </ion-header>
 
   <ion-content>
+    <ion-searchbar placeholder="Search" [debounce]="200" (ionInput)="handleInput($event)"></ion-searchbar>
     <ion-list>
-      <ion-item *ngFor="let item of storage|keyvalue">
-        <ion-label>{{ item.key }}</ion-label>
-        <ion-label>{{item.value}}</ion-label>
+      <ion-item *ngFor="let item of results; let i = index">
+        <ion-label class="country">{{item.country}}</ion-label>
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+        <ion-label class="city">{{item.city}}</ion-label>
       </ion-item>
     </ion-list>
   </ion-content>
