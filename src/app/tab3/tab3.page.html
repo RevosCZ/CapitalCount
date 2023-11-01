@@ -13,13 +13,32 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button expand="block" shape="round">Country</ion-button>
-  <ion-button expand="block" shape="round">City</ion-button>
+  <ion-card *ngFor="let info of countryInfo">
+    <ion-card-header>
+      <ion-card-title>Random Country Info</ion-card-title>
+    </ion-card-header>
+    <ion-item>Name: {{info.name.common}}</ion-item>
+    <ion-item>Capital: {{info.capital}}</ion-item>
+    <!-- <ion-item>Continent: {{info.continents}}</ion-item> -->
+    <ion-img src = {{info.flags.png}}></ion-img>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Locate Quiz</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-button expand="block" shape="round" (click)="randomCountry()">Country</ion-button>
+  <ion-button expand="block" shape="round" (click)="randomCity()">City</ion-button>
 
   <ion-item>
-    <ion-input placeholder="Enter text"></ion-input>
+    <ion-label class="text">{{randValue}}</ion-label>
   </ion-item>
-  <ion-button expand="block" shape="round">Check</ion-button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-item>
+    <ion-input [clearOnEdit]="true" placeholder="Enter text" [(ngModel)]="userInput"></ion-input>
+  </ion-item>
+  <ion-button expand="block" shape="round" (click)="buttonCheck()">Check</ion-button>
+
 </ion-content>
