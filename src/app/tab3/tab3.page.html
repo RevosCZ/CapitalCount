@@ -13,32 +13,51 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let info of countryInfo">
-    <ion-card-header>
-      <ion-card-title>Random Country Info</ion-card-title>
-    </ion-card-header>
-    <ion-item>Name: {{info.name.common}}</ion-item>
-    <ion-item>Capital: {{info.capital}}</ion-item>
-    <!-- <ion-item>Continent: {{info.continents}}</ion-item> -->
-    <ion-img src = {{info.flags.png}}></ion-img>
-  </ion-card>
-
   <ion-card>
+    <img alt="Main Page" src="assets/img/CC Locate.png" />
     <ion-card-header>
-      <ion-card-title>Locate Quiz</ion-card-title>
+      <ion-card-title>Location Quiz</ion-card-title>
     </ion-card-header>
-  </ion-card>
+  
 
   <ion-button expand="block" shape="round" (click)="randomCountry()">Country</ion-button>
   <ion-button expand="block" shape="round" (click)="randomCity()">City</ion-button>
 
   <ion-item>
-    <ion-label class="text">{{randValue}}</ion-label>
+    <ion-label class="{{textformat}}">{{randValue}}</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-input [clearOnEdit]="true" placeholder="Enter text" [(ngModel)]="userInput"></ion-input>
   </ion-item>
   <ion-button expand="block" shape="round" (click)="buttonCheck()">Check</ion-button>
+
+  
+    <ion-card-header>
+      <ion-card-title class="streak"> Current Streak</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="streak">
+      {{streak}}
+    </ion-card-content>
+
+    <ion-card-header>
+      <ion-card-title class="streak">Highest Streak</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="streak">
+      {{highestStreak}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let info of countryInfo">
+    <ion-card-header>
+      <ion-card-title>Random Country Info</ion-card-title>
+    </ion-card-header>
+    <ion-item>Name: {{info.name.common}}</ion-item>
+    <ion-item>Capital: {{info.capital}}</ion-item>
+    <ion-item>Continent: {{info.continents}}</ion-item>
+    <ion-img src = {{info.flags.png}}></ion-img>
+  </ion-card>
 
 </ion-content>

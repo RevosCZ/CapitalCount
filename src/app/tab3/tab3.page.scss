@@ -3,3 +3,23 @@
     display:flex;
     justify-content: center;
 }
+
+.correct {
+    font-weight:700;
+    display:flex;
+    justify-content: center;
+    color: green;
+}
+
+.incorrect {
+    font-weight:700;
+    display:flex;
+    justify-content: center;
+    color: red;
+}
+
+.streak {
+    font-weight:700;
+    display:flex;
+    justify-content: center;
+}

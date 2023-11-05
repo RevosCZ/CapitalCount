@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../database/database';
-
 
 @Component({
   selector: 'app-tab2',
@@ -14,7 +12,7 @@ export class Tab2Page implements OnInit {
     this.checkAppMode();
   }
 
-  constructor(public storage:StorageService) {}
+  constructor() {}
 
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
