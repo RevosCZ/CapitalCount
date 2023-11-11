@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { generateItems } from '../database/generator';
-import { StorageService } from '../database/database';
-
+import { generateItems, editError } from '../database/generator';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -41,28 +39,8 @@ export class Tab3Page implements OnInit {
   
   randomApi() {
     const num = this.randomNum(0,this.items.length-1)
-    const result = this.editError(this.items[num].country);
+    const result = editError(this.items[num].country);
     return result;
-  }
-
-  editError(country : String) {
-    if (country == "Antigua & Barbuda") {return ("Antigua and Barbuda")};
-    if (country == "Bosnia & Herzegovina") {return ("Bosnia and Herzegovina")};
-    if (country == "Bolivia, admin.") {return ("Bolivia")};
-    if (country == "Bolivia, offic.") {return ("Bolivia")};
-    if (country == "Central African Rep.") {return ("Central African Republic")};
-    if (country == "Congo, Dem. Rep.") {return ("Democratic Republic of the Congo")};
-    if (country == "Congo, Rep.") {return ("Republic of the Congo")};
-    if (country == "Dominican Rep.") {return ("Dominican Republic")};
-    if (country == "Fed. St. of Micronesia") {return ("Federated States of Micronesia")};
-    if (country == "Saint Kitts & Nevis") {return ("Saint Kitts and Nevis")};
-    if (country == "Saint Vincent & Gren.") {return ("Saint Vincent and the Grenadines")};
-    if (country == "Sao Tome & Principe") {return ("Sao Tome and Principe")};
-    if (country == "South Africa, admin.") {return ("South Africa")};
-    if (country == "South Africa, legis.") {return ("South Africa")};
-    if (country == "South Africa, judic.") {return ("South Africa")};
-    if (country == "Trinidad & Toboga") {return ("Trinidad and Toboga")};
-    return country;
   }
 
   randomCity() {

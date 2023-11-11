@@ -41,7 +41,7 @@ export function generateItems(array: Array<{ country: String, city: String}>) {
     array.push({country:"Congo, Dem. Rep.",city:"Kinshasa"})
     array.push({country:"Congo, Rep.",city:"Brazzaville"})
     array.push({country:"Costa Rica",city:"San Jose"})
-    array.push({country:"Cote d'Ivoire",city:"Yamoussoukro"})
+    array.push({country:"Ivory Coast",city:"Yamoussoukro"})
     array.push({country:"Croatia",city:"Zagreb"})
     array.push({country:"Cuba",city:"Havana"})
     array.push({country:"Cyprus",city:"Nicosia"})
@@ -204,3 +204,25 @@ export function generateItems(array: Array<{ country: String, city: String}>) {
     array.push({country:"Zambia",city:"Lusaka"})
     array.push({country:"Zimbabwe",city:"Harare"})
 }
+
+export function editError(country : String) {
+    if (country == "Antigua & Barbuda") {return ("Antigua and Barbuda")};
+    if (country == "Bosnia & Herzegovina") {return ("Bosnia and Herzegovina")};
+    if (country == "Bolivia, admin.") {return ("Bolivia")};
+    if (country == "Bolivia, offic.") {return ("Bolivia")};
+    if (country == "Central African Rep.") {return ("Central African Republic")};
+    if (country == "Congo, Dem. Rep.") {return ("Democratic Republic of the Congo")};
+    if (country == "Congo, Rep.") {return ("Republic of the Congo")};
+    if (country == "Dominican Rep.") {return ("Dominican Republic")};
+    if (country == "Fed. St. of Micronesia") {return ("Federated States of Micronesia")};
+    if (country == "Saint Kitts & Nevis") {return ("Saint Kitts and Nevis")};
+    if (country == "Saint Vincent & Gren.") {return ("Saint Vincent and the Grenadines")};
+    if (country == "Sao Tome & Principe") {return ("Sao Tome and Principe")};
+    if (country == "South Africa, admin.") {return ("South Africa")};
+    if (country == "South Africa, legis.") {return ("South Africa")};
+    if (country == "South Africa, judic.") {return ("South Africa")};
+    if (country == "Trinidad & Toboga") {return ("Trinidad and Toboga")};
+
+    if (country == "Scotland") {return ("England")};
+    return country;
+  }
